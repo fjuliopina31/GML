@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    properties:
+      hibernate:
+    show-sql: false
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/gml_db
+    username: root
+    password: root
+    driverClassName: org.postgresql.Driver
+application:
+    name: GMLapp
+server:
+  port: 8080
