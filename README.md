@@ -1,4 +1,5 @@
 Proyecto de Aplicación Java
+
 Este proyecto es una aplicación Java que requiere la ejecución de Docker Compose para configurar la base de datos. A continuación, se describen los pasos necesarios para ejecutar la aplicación correctamente.
 
 Requisitos previos
