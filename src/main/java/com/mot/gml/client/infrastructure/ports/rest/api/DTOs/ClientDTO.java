@@ -2,7 +2,6 @@ package com.mot.gml.client.infrastructure.ports.rest.api.DTOs;
 
 import com.mot.gml.client.domain.exceptions.constants.ExceptionsGMLConstants;
 import com.mot.gml.client.domain.models.client.Client;
-import com.mot.gml.client.infrastructure.transversal.transform.ClientTransform;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,11 +10,13 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 public class ClientDTO implements Serializable {
+    private BigInteger id;
     @NotNull(message = ExceptionsGMLConstants.INVALID_SHARED_KEY_NULL)
     @NotEmpty(message = ExceptionsGMLConstants.INVALID_SHARED_KEY_NULL)
     private String sharedKey;
@@ -32,6 +33,7 @@ public class ClientDTO implements Serializable {
     private Date endDate;
 
     public ClientDTO(Client client){
+        this.id = client.getId();
         this.sharedKey = client.getSharedKey();
         this.name = client.getName();
         this.email = client.getEmail();

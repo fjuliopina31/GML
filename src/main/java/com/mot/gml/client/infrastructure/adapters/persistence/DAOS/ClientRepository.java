@@ -13,5 +13,4 @@ public interface ClientRepository extends JpaRepository<ClientEntity, Integer> {
 
     ClientEntity save(ClientEntity client);
 
-
 }

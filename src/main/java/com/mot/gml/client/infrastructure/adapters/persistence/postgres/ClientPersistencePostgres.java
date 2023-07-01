@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -61,7 +62,7 @@ public class ClientPersistencePostgres implements ClientPersistence {
             log.debug("client found");
             return this.clientMapper.clientEntityToClient(clientEntity);
         }
-        throw new BusinessException("B-304", sharedKey, HttpStatus.BAD_REQUEST);
+        throw new BusinessException("B-304", sharedKey, HttpStatus.NOT_FOUND);
     }
 
     @Override
